@@ -2,7 +2,7 @@ import os
 import json
 from datetime import datetime
 
-BASE_DIR = r"C:\Users\Workstation\Learning"                                                           # Path configuration - using raw string for Windows compatibility
+BASE_DIR = r"C:\Users\HomeTN\Documents\Klümper\learning-log.md"                                            # Path configuration - using raw string for Windows compatibility
 LOG_FILE = os.path.join(BASE_DIR, "DIARY.md")
 DATA_FILE = os.path.join(BASE_DIR, ".data.json")
 
@@ -41,7 +41,7 @@ def save_all(entries):
     
     
     
-    entries.sort(key=lambda x: (datetime.strptime(x['date'], "%d.%m.%Y"), x['cat']), reverse=True)      # 2. Sort logic: Convert string back to datetime object for correct chronological order
+    entries.sort(key=lambda x: (datetime.strptime(x['date'], "%d.%m.%Y"), x['cat'].lower()), reverse=True)      # 2. Sort logic: Convert string back to datetime object for correct chronological order
                                                                                                         # Then sort by category as a secondary criterion
    
     with open(LOG_FILE, "w", encoding="utf-8") as f:                                                    # 3. Generate the human-readable Markdown export
@@ -56,9 +56,9 @@ def save_all(entries):
                 f.write(f"## {current_date}\n\n")
                 current_cat = None 
             
-            if e['cat'] != current_cat:
+            if e['cat'].lower() != (current_cat.lower() if current_cat else None):
                 current_cat = e['cat']
-                f.write(f"### Category: {current_cat.upper()}\n\n")
+                f.write(f"### Category: {current_cat.capitalize()}\n\n")
             
             f.write(f"**Title: {e['title']}**\n\n")
             f.write(f"Description: {e['desc']}  \n")
