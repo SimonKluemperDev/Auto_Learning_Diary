@@ -1,27 +1,27 @@
-# Auto Learning Diary - Phase 1
+# Learning Diary System (Phase 1: Stabilization)
 
-## The Origin Story
-I started learning the fundamentals of Python just two weeks ago. While researching how to build a solid foundation for my future in IT, I realized the importance of showcasing my learning curve on GitHub through a "Learning Diary."
+### What is this?
+This is my personal tool to track my progress as an IT student. I built it to automate my documentation and show my learning curve on GitHub.
 
-## The Problem
-After writing my first few entries, I noticed a major bottleneck: I was spending more time on manual formatting (Markdown, spacing, headers) than on actual coding. I realized that this was not efficient. 
+---
 
-## The Solution (Phase 1)
-To solve this, I built my first Python project. This script automates the entire logging process to ensure maximum efficiency from day one.
+### Current Status: Cleaning the Logic
+I spent today refactoring the core logic. I realized that the system was too sensitive to how I typed my categories (e.g., "python" vs "Python").
 
-### Project Goals & Features:
-* **Structured Thinking:** Every entry requires a category, a description, and a "Problem/Reason" section to reflect on *why* a topic was studied.
-* **Data Persistence:** Uses a `.data.json` file as a local database to separate raw data from the final Markdown presentation.
-* **Input Validation:** Prevents empty logs and ensures data integrity to maintain high documentation standards.
-* **Automatic Categorization:** The script automatically groups entries by technical topics (e.g., Python, Git).
-* **Chronological Order:** Regardless of when I enter the data, the tool sorts everything by date.
-* **Efficiency:** Minimizing administrative overhead so I can focus on "Deep Dives."
+**What I fixed today:**
+* **Case-Insensitivity:** The system now treats "test", "Test", and "TEST" as the exact same category.
+* **Standardized Output:** No matter how I type it, the output always looks clean (First letter capitalized, the rest lowercase).
+* **Sorting & Grouping:** Entries are now correctly grouped together, even if I made a typo with capitalization.
 
-## My Learning Approach
-While I have built a solid foundation in Python, I leverage AI as a technical consultant and mentor. 
-* **No Copy-Paste:** I do not let AI simply write my code. 
-* **Problem Solving:** I use AI to brainstorm architectural ideas, understand complex error messages, or explore best practices. 
-* **Refining:** This helps me bridge the gap between "knowing the syntax" and "solving real-world problems" more efficiently.
+---
 
-## My Philosophy
-The future of software development requires discipline and efficiency. By automating my own documentation early on, I am building the habits necessary for a successful career in IT.
+### The Next Steps (Planning Phase)
+I’m currently planning the jump to **Concept 2 & 3**.
+
+* **The Goal:** Moving deep-dive content to Google Docs and using the Diary as a high-speed index with a Tag-based search.
+* **Status:** I’ve spent the day researching "Learning Domains" in IT and preparing the Google Docs structure. Implementation starts next week.
+
+---
+
+### My Philosophy
+> "I hate chaos. Before I build new features, I make sure the current logic is solid."
